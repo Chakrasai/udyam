@@ -1,0 +1,16 @@
+{
+  "name": "udyam-registration-portal",
+  "version": "1.0.0",
+  "description": "MSME Udyam Registration Management System",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install && cd ../scrapper && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "scrape": "cd scrapper && npm start",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start"
+  },
+  "keywords": ["udyam", "msme", "registration", "react", "nodejs"],
+  "author": "",
+  "license": "ISC"
+}

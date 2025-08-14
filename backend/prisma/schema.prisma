@@ -1,0 +1,43 @@
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UdyamRegistration {
+  id                 Int      @id @default(autoincrement())
+  
+  // Step 1 fields
+  aadhaarNumber      String   @db.VarChar(12)
+  entrepreneurName   String   @db.VarChar(100)
+  consentCheckbox    Boolean  @default(false)
+
+  // Step 2 fields
+  panNumber          String   @db.VarChar(10)
+  gstinNumber        String?  @db.VarChar(15)
+  enterpriseName     String   @db.VarChar(100)
+  constitution       String   @db.VarChar(50) 
+  majorActivity      String   @db.VarChar(50) 
+  nicCode            String   @db.VarChar(5)
+  businessCommencementDate DateTime?
+  businessAddress    String
+  state              String
+  district           String
+  pincode            String   @db.VarChar(6)
+  mobileNumber       String   @db.VarChar(10)
+  emailAddress       String   @db.VarChar(100)
+  investment         Float
+  turnover           Float
+  bankAccountNumber  String?  @db.VarChar(20)
+  ifscCode           String?  @db.VarChar(11)
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("udyam_registrations")
+}
