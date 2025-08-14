@@ -43,16 +43,32 @@
 
 #### Vercel (Frontend):
 1. Connect GitHub repository to Vercel
-2. Framework: Vite
-3. Root Directory: `frontend`
-4. Build Command: `npm run build`
-5. Output Directory: `dist`
+2. **Framework Preset**: Vite
+3. **Root Directory**: `frontend`
+4. **Build Command**: `npm run build` (auto-detected)
+5. **Output Directory**: `dist` (auto-detected)
+6. **Environment Variables:**
+   ```
+   VITE_API_BASE_URL=https://your-backend-url.railway.app
+   VITE_API_VERSION=v1
+   VITE_APP_ENVIRONMENT=production
+   VITE_ENABLE_DEBUG_MODE=false
+   VITE_DEFAULT_LANGUAGE=en
+   VITE_SUPPORTED_LANGUAGES=en,hi
+   ```
 
 #### Railway (Backend):
 1. Connect GitHub repository to Railway
-2. Root Directory: `backend`
-3. Build Command: `npm install && npx prisma generate`
-4. Start Command: `npm start`
+2. **Root Directory**: `backend`
+3. **Build Command**: `npm install && npx prisma generate`
+4. **Start Command**: `npm start`
+5. **Environment Variables:**
+   ```
+   NODE_ENV=production
+   PORT=5000
+   DATABASE_URL=postgresql://username:password@hostname:port/database_name
+   CORS_ORIGIN=https://your-frontend-url.vercel.app
+   ```
 
 ## 🛠️ Local Development
 

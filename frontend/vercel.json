@@ -1,34 +1,10 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "VITE_API_BASE_URL": "https://your-backend-url.railway.app",
-    "VITE_API_VERSION": "v1",
-    "VITE_APP_ENVIRONMENT": "production",
-    "VITE_ENABLE_DEBUG_MODE": "false",
-    "VITE_DEFAULT_LANGUAGE": "en",
-    "VITE_SUPPORTED_LANGUAGES": "en,hi"
-  },
-  "build": {
-    "env": {
-      "VITE_API_BASE_URL": "https://your-backend-url.railway.app"
-    }
-  },
-  "functions": {},
   "headers": [
     {
       "source": "/(.*)",
@@ -56,7 +32,7 @@
       ]
     },
     {
-      "source": "/static/(.*)",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
