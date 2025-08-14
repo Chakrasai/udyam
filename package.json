@@ -6,19 +6,14 @@
   "scripts": {
     "install:all": "cd backend && npm install && cd ../frontend && npm install && cd ../scrapper && npm install",
     "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev", 
-    "scrape": "cd scrapper && npm start",
-    "build:frontend": "cd frontend && npm run build",
-    "build:backend": "cd backend && npx prisma generate",
-    "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend && npm run preview",
-    "test": "cd backend && npm test",
-    "deploy:frontend": "echo 'Deploy frontend from frontend/ directory to Vercel'",
-    "deploy:backend": "echo 'Deploy backend from backend/ directory to Render'"
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "scrape": "cd scrapper && npm start"
   },
   "keywords": ["udyam", "msme", "registration", "react", "nodejs"],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
