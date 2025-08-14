@@ -10,9 +10,12 @@
     "scrape": "cd scrapper && npm start",
     "build": "cd frontend && npm install && npm run build",
     "start": "cd backend && npm start",
-    "test": "cd backend && npm test"
+    "test": "cd backend && npm test",
+    "postinstall": "cd frontend && npm install"
   },
   "keywords": ["udyam", "msme", "registration", "react", "nodejs"],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
 }
