@@ -1,43 +1,40 @@
 # Udyam Registration Portal - Deployment Guide
 
-## 🚀 Quick Deploy to Render
+## 🚀 LIVE DEPLOYMENT URLs
 
-### Frontend Deployment:
-- **Build Command**: `cd frontend && npm install && npm run build`
-- **Publish Directory**: `frontend/dist`
-- **Environment Variables**:
-  ```
-  VITE_API_BASE_URL=https://your-backend-url.onrender.com
-  VITE_API_VERSION=v1
-  VITE_APP_ENVIRONMENT=production
-  VITE_ENABLE_DEBUG_MODE=false
-  VITE_DEFAULT_LANGUAGE=en
-  VITE_SUPPORTED_LANGUAGES=en,hi
-  ```
+- **Frontend**: https://uifron.vercel.app/
+- **Backend**: https://udyam-mlhj.onrender.com
 
-### Backend Deployment:
-- **Build Command**: `cd backend && npm install && npx prisma generate`
-- **Start Command**: `cd backend && npm start`
-- **Environment Variables**:
-  ```
-  NODE_ENV=production
-  PORT=5000
-  DATABASE_URL=postgresql://username:password@hostname:port/database_name
-  CORS_ORIGIN=https://your-frontend-url.onrender.com
-  ```
+## 📁 Deploy Frontend to Vercel
 
-## 🚀 Deploy to Vercel (Frontend)
+### From Frontend Directory:
+1. **Deploy from**: `frontend/` folder
+2. **Framework**: Vite
+3. **Build Command**: `npm run build`
+4. **Output Directory**: `dist`
+5. **Environment Variables**:
+   ```
+   VITE_API_BASE_URL=https://udyam-mlhj.onrender.com
+   VITE_API_VERSION=v1
+   VITE_APP_ENVIRONMENT=production
+   VITE_ENABLE_DEBUG_MODE=false
+   VITE_DEFAULT_LANGUAGE=en
+   VITE_SUPPORTED_LANGUAGES=en,hi
+   ```
 
-1. **Connect GitHub repository to Vercel**
-2. **Framework Preset**: Vite  
-3. **Root Directory**: `frontend`
-4. **Environment Variables**: (same as above)
+## 🚀 Deploy Backend to Render
 
-## 🚀 Deploy to Railway (Backend)
-
-1. **Connect GitHub repository to Railway**
-2. **Root Directory**: `backend`
-3. **Environment Variables**: (same as above)
+### From Backend Directory:
+1. **Deploy from**: `backend/` folder  
+2. **Build Command**: `npm install && npx prisma generate`
+3. **Start Command**: `npm start`
+4. **Environment Variables**:
+   ```
+   NODE_ENV=production
+   PORT=5000
+   DATABASE_URL=your_postgresql_connection_string
+   CORS_ORIGIN=https://uifron.vercel.app
+   ```
 
 ## 🛠️ Local Development
 
@@ -52,8 +49,11 @@ npm run dev:backend
 npm run dev:frontend
 ```
 
-## 📝 Notes
+## ✅ Deployment Checklist
 
-- Use `npm` for local development
-- Both `npm` and `yarn` are supported for deployment
-- Make sure to update CORS_ORIGIN and VITE_API_BASE_URL with actual URLs
+- ✅ Frontend configured for: https://uifron.vercel.app/
+- ✅ Backend configured for: https://udyam-mlhj.onrender.com
+- ✅ CORS origin set to frontend URL
+- ✅ API base URL points to backend URL
+- ✅ Security headers configured
+- ✅ Content Security Policy updated
